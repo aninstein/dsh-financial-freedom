@@ -1,0 +1,579 @@
+[
+  {
+    "id": "builtin-01",
+    "markdown": "# 录入或更新持仓\n\n用文字或截图整理持仓，核对后保存。 协助我录入或更新真实持仓。先询问账户币种，并读取当前持仓；我会提供文字或截图。仅提取明确提供的信息，缺失或模糊的内容请询问我，保留未提及的持仓、现金和本金。截图需要当前模型支持图片输入；确认后再按最新版本保存并回读结果。\n\n## 使用的 Skills\n\n- finfreedom-research\n\n## 提示词\n\n请使用 finfreedom-research Skill，协助我录入或更新真实持仓。先询问账户币种，并读取当前持仓；我会提供文字或截图。仅提取明确提供的信息，缺失或模糊的内容请询问我，保留未提及的持仓、现金和本金。截图需要当前模型支持图片输入；确认后再按最新版本保存并回读结果。",
+    "skills": [
+      "finfreedom-research"
+    ],
+    "group": "持仓与账户"
+  },
+  {
+    "id": "builtin-02",
+    "markdown": "# 复盘持仓与投资论点\n\n检查持仓依据、变化、风险和待验证事项。 读取我的持仓与相关投资记忆，逐项整理已有投资论点、近期变化、支持与反方证据、风险和需要核实的催化事件。引用实际数据来源及日期；缺少成本、论点或行情时明确说明，不要编造，也不要自动修改持仓或记忆。\n\n## 使用的 Skills\n\n- finfreedom-research\n- thesis-tracker\n\n## 提示词\n\n请使用 finfreedom-research 和 thesis-tracker Skills，读取我的持仓与相关投资记忆，逐项整理已有投资论点、近期变化、支持与反方证据、风险和需要核实的催化事件。引用实际数据来源及日期；缺少成本、论点或行情时明确说明，不要编造，也不要自动修改持仓或记忆。",
+    "skills": [
+      "finfreedom-research",
+      "thesis-tracker"
+    ],
+    "group": "持仓与账户"
+  },
+  {
+    "id": "builtin-03",
+    "markdown": "# 检查富途 OpenD\n\n检查连接，必要时协助安装官方 OpenD。 请使用 install-futu-opend Skill 检查并安装富途 OpenD。先检查本机已有服务与登录状态，已有可用服务时不要重复安装；如果需要安装，请按 Skill 使用官方来源，由我在 OpenD 中完成登录。完成后验证 finfreedom 的数据连接，不要解锁交易或下单。\n\n## 使用的 Skills\n\n- install-futu-opend\n\n## 提示词\n\n请使用 install-futu-opend Skill 检查并安装富途 OpenD。先检查本机已有服务与登录状态，已有可用服务时不要重复安装；如果需要安装，请按 Skill 使用官方来源，由我在 OpenD 中完成登录。完成后验证 finfreedom 的数据连接，不要解锁交易或下单。",
+    "skills": [
+      "install-futu-opend"
+    ],
+    "group": "持仓与账户"
+  },
+  {
+    "id": "builtin-04",
+    "markdown": "# 生成市场简报\n\n汇总行情、新闻、流动性与重点事件。 生成一份中文市场简报：先读取可用的市场状态、主要指数、财经新闻和央行流动性，再概括重要事件、市场分歧及需要关注的风险。注明来源和数据时间；缺失或过期的数据单独列出，不要假设实时行情。\n\n## 使用的 Skills\n\n- finfreedom-research\n- morning-note\n\n## 提示词\n\n请使用 finfreedom-research 和 morning-note Skills，生成一份中文市场简报：先读取可用的市场状态、主要指数、财经新闻和央行流动性，再概括重要事件、市场分歧及需要关注的风险。注明来源和数据时间；缺失或过期的数据单独列出，不要假设实时行情。",
+    "skills": [
+      "finfreedom-research",
+      "morning-note"
+    ],
+    "group": "市场与研究"
+  },
+  {
+    "id": "builtin-05",
+    "markdown": "# 研究行业与板块轮动\n\n比较行业表现、新闻与资金线索。 结合可用的行业、板块轮动、新闻、流动性及资金数据，帮助我研究当前值得关注的行业。先说明市场范围和数据覆盖；区分不同时间窗口的相对强弱与跨日变化，列出来源、反方证据和数据缺口。需要指定行业时先询问我。\n\n## 使用的 Skills\n\n- finfreedom-research\n- sector-overview\n\n## 提示词\n\n请使用 finfreedom-research 和 sector-overview Skills，结合可用的行业、板块轮动、新闻、流动性及资金数据，帮助我研究当前值得关注的行业。先说明市场范围和数据覆盖；区分不同时间窗口的相对强弱与跨日变化，列出来源、反方证据和数据缺口。需要指定行业时先询问我。",
+    "skills": [
+      "finfreedom-research",
+      "sector-overview"
+    ],
+    "group": "市场与研究"
+  },
+  {
+    "id": "builtin-06",
+    "markdown": "# 深入研究个股\n\n梳理公司业务、财务、估值与主要风险。 帮我研究一只股票。请先询问名称或代码及市场，再查找可用的行情、公司资料、财务与近期事件；形成支持与反对观点、待验证假设、风险和后续跟踪指标，并标注来源与日期。不要编造缺失数据或执行交易。\n\n## 使用的 Skills\n\n- finfreedom-research\n- thesis-tracker\n\n## 提示词\n\n请使用 finfreedom-research 和 thesis-tracker Skills，帮我研究一只股票。请先询问名称或代码及市场，再查找可用的行情、公司资料、财务与近期事件；形成支持与反对观点、待验证假设、风险和后续跟踪指标，并标注来源与日期。不要编造缺失数据或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "thesis-tracker"
+    ],
+    "group": "市场与研究"
+  },
+  {
+    "id": "builtin-07",
+    "markdown": "# 分析基金\n\n查看基金净值、持仓披露与风险。 请使用 finfreedom-research Skill 帮我研究基金。先询问六位基金代码，再查询基金资料、历史净值、费用及最新可用持仓披露；说明数据时点、投资范围、集中度和缺失信息，不将历史收益视为未来预测。\n\n## 使用的 Skills\n\n- finfreedom-research\n\n## 提示词\n\n请使用 finfreedom-research Skill 帮我研究基金。先询问六位基金代码，再查询基金资料、历史净值、费用及最新可用持仓披露；说明数据时点、投资范围、集中度和缺失信息，不将历史收益视为未来预测。",
+    "skills": [
+      "finfreedom-research"
+    ],
+    "group": "市场与研究"
+  },
+  {
+    "id": "builtin-08",
+    "markdown": "# 准备财报季\n\n整理待关注的业绩指标和情景。 为我准备财报前瞻。先询问公司代码和报告期；检索可用的历史财报、公告、业绩指引与日历，列出关键指标、待验证假设和不同情景。只有在有可靠来源时才引用市场一致预期和发布日期，并说明数据缺口。\n\n## 使用的 Skills\n\n- finfreedom-research\n- earnings-preview\n\n## 提示词\n\n请使用 finfreedom-research 和 earnings-preview Skills，为我准备财报前瞻。先询问公司代码和报告期；检索可用的历史财报、公告、业绩指引与日历，列出关键指标、待验证假设和不同情景。只有在有可靠来源时才引用市场一致预期和发布日期，并说明数据缺口。",
+    "skills": [
+      "finfreedom-research",
+      "earnings-preview"
+    ],
+    "group": "市场与研究"
+  },
+  {
+    "id": "builtin-09",
+    "markdown": "# 解读研报或财报\n\n从已导入的资料中提取事实和疑点。 请使用 finfreedom-research Skill 解读我提供或已导入的研报、公告或财报。先询问要分析的资料和重点，再查找对应文档与页面；分开列出原文事实、分析、疑问和风险，引用文档名称、页码及报告期，不要推测原文未提供的数字。\n\n## 使用的 Skills\n\n- finfreedom-research\n\n## 提示词\n\n请使用 finfreedom-research Skill 解读我提供或已导入的研报、公告或财报。先询问要分析的资料和重点，再查找对应文档与页面；分开列出原文事实、分析、疑问和风险，引用文档名称、页码及报告期，不要推测原文未提供的数字。",
+    "skills": [
+      "finfreedom-research"
+    ],
+    "group": "策略与资料"
+  },
+  {
+    "id": "builtin-10",
+    "markdown": "# 设计并复盘回测\n\n明确规则、交易成本和样本限制。 请使用 finfreedom-research Skill 协助我研究一个策略或复盘已有回测。先询问标的、市场、区间和策略规则；检查可用日线与数据集，再使用插件支持的回测能力。解释基准、交易成本、样本范围、最大回撤和局限，不把回测结果当成未来预测，也不自动下单。\n\n## 使用的 Skills\n\n- finfreedom-research\n\n## 提示词\n\n请使用 finfreedom-research Skill 协助我研究一个策略或复盘已有回测。先询问标的、市场、区间和策略规则；检查可用日线与数据集，再使用插件支持的回测能力。解释基准、交易成本、样本范围、最大回撤和局限，不把回测结果当成未来预测，也不自动下单。",
+    "skills": [
+      "finfreedom-research"
+    ],
+    "group": "策略与资料"
+  },
+  {
+    "id": "builtin-11",
+    "markdown": "# 持仓集中度体检\n\n量化单一标的和资产类别集中风险。 读取当前币种持仓，计算可估值资产、单标的和类别占比，标记估值缺口；结合投资记忆讨论集中风险与待核实事项，不推断缺失行业。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-portfolio-risk\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-portfolio-risk Skills，读取当前币种持仓，计算可估值资产、单标的和类别占比，标记估值缺口；结合投资记忆讨论集中风险与待核实事项，不推断缺失行业。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-portfolio-risk"
+    ],
+    "group": "组合与风险",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-12",
+    "markdown": "# 组合压力情景分析\n\n估算明确假设下的资产价格冲击。 询问币种和冲击假设，基于可得持仓做上涨、下跌情景的敏感性计算，列出假设、资产覆盖范围与未估值资产，不将情景视为预测。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-portfolio-risk\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-portfolio-risk Skills，询问币种和冲击假设，基于可得持仓做上涨、下跌情景的敏感性计算，列出假设、资产覆盖范围与未估值资产，不将情景视为预测。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-portfolio-risk"
+    ],
+    "group": "组合与风险",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-13",
+    "markdown": "# 持仓相关性与分散性\n\n检查组合是否存在同向风险。 检查持仓历史收盘序列是否完整且同币种，只有数据足够时计算相关性、样本区间和缺失情况；不具备条件时解释原因并提供可行的定性检查。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-portfolio-risk\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-portfolio-risk Skills，检查持仓历史收盘序列是否完整且同币种，只有数据足够时计算相关性、样本区间和缺失情况；不具备条件时解释原因并提供可行的定性检查。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-portfolio-risk"
+    ],
+    "group": "组合与风险",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-14",
+    "markdown": "# 基金重仓穿透风险\n\n结合披露资料检查底层集中度。 核对持仓中的基金及最新持仓披露日期，识别有证据的重仓重合与集中风险；披露不完整时明确无法计算全量穿透比例。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-fund-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-fund-analysis Skills，核对持仓中的基金及最新持仓披露日期，识别有证据的重仓重合与集中风险；披露不完整时明确无法计算全量穿透比例。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-fund-analysis"
+    ],
+    "group": "组合与风险",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-15",
+    "markdown": "# 持仓再平衡方案草稿\n\n根据目标配置提出待核对的方案。 先询问目标权重、约束与币种，再比较实际配置，列出差额和情景草稿；不执行交易、不擅自设定目标，也不把不同币种混合计算。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-portfolio-risk\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-portfolio-risk Skills，先询问目标权重、约束与币种，再比较实际配置，列出差额和情景草稿；不执行交易、不擅自设定目标，也不把不同币种混合计算。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-portfolio-risk"
+    ],
+    "group": "组合与风险",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-16",
+    "markdown": "# 三张财务报表联动分析\n\n对齐报告期，检查利润、现金流与资产负债。 查询指定公司的利润表、资产负债表和现金流量表，核对报告期和单位，分析增长、利润质量与财务结构；逐项列来源，缺失项不编造。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-financial-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-financial-analysis Skills，查询指定公司的利润表、资产负债表和现金流量表，核对报告期和单位，分析增长、利润质量与财务结构；逐项列来源，缺失项不编造。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-financial-analysis"
+    ],
+    "group": "财务与估值",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-17",
+    "markdown": "# 现金流与盈利质量检查\n\n定位利润和经营现金流的背离。 在一致报告期比较净利润、经营现金流、应收与存货变化，区分事实、可能解释及需要核实的风险，不以单一指标断定财务造假。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-financial-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-financial-analysis Skills，在一致报告期比较净利润、经营现金流、应收与存货变化，区分事实、可能解释及需要核实的风险，不以单一指标断定财务造假。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-financial-analysis"
+    ],
+    "group": "财务与估值",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-18",
+    "markdown": "# 债务与偿债能力分析\n\n检查杠杆、短期流动性和偿债压力。 基于已披露的现金、债务、利息与现金流评估杠杆和短期偿债压力，计算时列出公式、报告期和缺失字段，金融机构另行说明口径。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-financial-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-financial-analysis Skills，基于已披露的现金、债务、利息与现金流评估杠杆和短期偿债压力，计算时列出公式、报告期和缺失字段，金融机构另行说明口径。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-financial-analysis"
+    ],
+    "group": "财务与估值",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-19",
+    "markdown": "# 估值假设与敏感性分析\n\n拆解估值驱动与不同假设的影响。 先询问估值方法和目标，读取可靠财务及价格数据，明确关键假设并构造情景；无法获得必要数据时列出缺口，不虚构目标价。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-financial-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-financial-analysis Skills，先询问估值方法和目标，读取可靠财务及价格数据，明确关键假设并构造情景；无法获得必要数据时列出缺口，不虚构目标价。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-financial-analysis"
+    ],
+    "group": "财务与估值",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-20",
+    "markdown": "# 财报变化与风险信号\n\n比较多个报告期的财务指标。 核对同口径报告期，对比收入、利润率、现金流和负债变化，指出一次性事项、数据缺失和需要复核的异常。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-financial-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-financial-analysis Skills，核对同口径报告期，对比收入、利润率、现金流和负债变化，指出一次性事项、数据缺失和需要复核的异常。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-financial-analysis"
+    ],
+    "group": "财务与估值",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-21",
+    "markdown": "# 基金费率与投资范围对比\n\n比较基金类型、费率及投资目标。 询问基金代码，核对最新公开资料，对比投资范围、基准、费用和风险，注明披露日期；缺少费率时明确标记。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-fund-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-fund-analysis Skills，询问基金代码，核对最新公开资料，对比投资范围、基准、费用和风险，注明披露日期；缺少费率时明确标记。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-fund-analysis"
+    ],
+    "group": "基金与ETF",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-22",
+    "markdown": "# ETF与联接基金差异\n\n区分场内价格与场外净值口径。 核对基金代码及类型，比较交易方式、价格或净值、费用、跟踪标的和可用披露，不能把折溢价和净值收益混同。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-fund-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-fund-analysis Skills，核对基金代码及类型，比较交易方式、价格或净值、费用、跟踪标的和可用披露，不能把折溢价和净值收益混同。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-fund-analysis"
+    ],
+    "group": "基金与ETF",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-23",
+    "markdown": "# 基金持仓重叠检查\n\n根据公开披露比较持仓交集。 查询两只或多只基金最近可用的持仓披露，展示报告期、覆盖率和可证实的重叠标的；不完整时不能给出全量精确重叠率。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-fund-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-fund-analysis Skills，查询两只或多只基金最近可用的持仓披露，展示报告期、覆盖率和可证实的重叠标的；不完整时不能给出全量精确重叠率。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-fund-analysis"
+    ],
+    "group": "基金与ETF",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-24",
+    "markdown": "# 基金历史表现与风险\n\n在一致区间核查收益和回撤。 先确认基金、区间和净值口径，基于可用历史数据比较收益与回撤；数据不足、分红口径不一致时说明，不用历史表现预测未来。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-fund-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-fund-analysis Skills，先确认基金、区间和净值口径，基于可用历史数据比较收益与回撤；数据不足、分红口径不一致时说明，不用历史表现预测未来。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-fund-analysis"
+    ],
+    "group": "基金与ETF",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-25",
+    "markdown": "# 央行流动性与利率跟踪\n\n梳理操作、到期与已知数据缺口。 查询央行公开市场操作及流动性资料，按时间与期限列出操作、到期和可计算净投放，注明来源、发布时间与未覆盖部分，不推断政策意图。\n\n## 使用的 Skills\n\n- finfreedom-research\n\n## 提示词\n\n请使用 finfreedom-research Skills，查询央行公开市场操作及流动性资料，按时间与期限列出操作、到期和可计算净投放，注明来源、发布时间与未覆盖部分，不推断政策意图。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research"
+    ],
+    "group": "市场与事件",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-26",
+    "markdown": "# 新闻事件影响追踪\n\n从公告和新闻梳理事实与风险。 询问公司、事件或行业，检索新闻与已上传资料，按时间区分已确认事实、市场解读及待验证信息，注明来源，避免把相关性当成因果。\n\n## 使用的 Skills\n\n- finfreedom-research\n\n## 提示词\n\n请使用 finfreedom-research Skills，询问公司、事件或行业，检索新闻与已上传资料，按时间区分已确认事实、市场解读及待验证信息，注明来源，避免把相关性当成因果。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research"
+    ],
+    "group": "市场与事件",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-27",
+    "markdown": "# 指数趋势与周期研究\n\n查看趋势、样本范围和历史波动。 读取指定指数日线和可用周期分析，说明样本区间、复权或单位、波动和数据时效，区分历史描述与未来推测。\n\n## 使用的 Skills\n\n- finfreedom-research\n\n## 提示词\n\n请使用 finfreedom-research Skills，读取指定指数日线和可用周期分析，说明样本区间、复权或单位、波动和数据时效，区分历史描述与未来推测。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research"
+    ],
+    "group": "市场与事件",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-28",
+    "markdown": "# 行业轮动的证据与反证\n\n验证行业相对表现和驱动线索。 结合 finfreedom-research 查询行业表现、新闻、流动性及可用资金证据，区别排名和跨日变化，列出反方证据及覆盖限制。\n\n## 使用的 Skills\n\n- finfreedom-research\n- sector-overview\n\n## 提示词\n\n请使用 finfreedom-research 和 sector-overview Skills，结合 finfreedom-research 查询行业表现、新闻、流动性及可用资金证据，区别排名和跨日变化，列出反方证据及覆盖限制。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "sector-overview"
+    ],
+    "group": "市场与事件",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-29",
+    "markdown": "# 均线策略回测诊断\n\n复核信号、费用、基准与回撤。 询问标的、日期和均线参数，检查数据完整性后调用当前支持的 SMA 回测，复核交易成本、成交假设、最大回撤与买入持有基准。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-strategy-research\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-strategy-research Skills，询问标的、日期和均线参数，检查数据完整性后调用当前支持的 SMA 回测，复核交易成本、成交假设、最大回撤与买入持有基准。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-strategy-research"
+    ],
+    "group": "策略与回测",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-30",
+    "markdown": "# 回测偏差与稳健性审查\n\n检查未来函数、参数敏感性和样本外。 对指定策略或回测记录检查信号时点、样本区间、未来函数和可用数据；如未提供样本外或多参数结果，列为待验证而不臆造。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-strategy-research\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-strategy-research Skills，对指定策略或回测记录检查信号时点、样本区间、未来函数和可用数据；如未提供样本外或多参数结果，列为待验证而不臆造。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-strategy-research"
+    ],
+    "group": "策略与回测",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-31",
+    "markdown": "# 历史回撤复盘\n\n解释样本内回撤与数据边界。 确认标的和区间，使用可用日线或回测记录分析样本内峰谷与最大回撤，说明复权、数据缺口及计算方法，不将结果视作未来上限。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-strategy-research\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-strategy-research Skills，确认标的和区间，使用可用日线或回测记录分析样本内峰谷与最大回撤，说明复权、数据缺口及计算方法，不将结果视作未来上限。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-strategy-research"
+    ],
+    "group": "策略与回测",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-32",
+    "markdown": "# 交易计划与失效条件\n\n将研究观点整理成可检验的计划。 先询问研究对象、目标及用户限制，结合可核验数据整理情景、触发条件、仓位约束和失效条件；只输出草稿，不自行下单。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-strategy-research\n\n## 提示词\n\n请使用 finfreedom-research 和 finfreedom-strategy-research Skills，先询问研究对象、目标及用户限制，结合可核验数据整理情景、触发条件、仓位约束和失效条件；只输出草稿，不自行下单。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-strategy-research"
+    ],
+    "group": "策略与回测",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-33",
+    "markdown": "# 公告与研报交叉核验\n\n对照多个原始材料检查差异。 询问目标公司、报告期及资料，搜索已上传文档，比较原文数值和表述，引用文件名、页码与发布时间，缺少原文时不要捏造。\n\n## 使用的 Skills\n\n- finfreedom-research\n\n## 提示词\n\n请使用 finfreedom-research Skills，询问目标公司、报告期及资料，搜索已上传文档，比较原文数值和表述，引用文件名、页码与发布时间，缺少原文时不要捏造。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research"
+    ],
+    "group": "资料与研究",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-34",
+    "markdown": "# 投资论点跟踪清单\n\n跟踪论点、催化事件与反方证据。 结合 finfreedom-research 读取相关记忆和可用资料，构建论点、证据、反证和待验证事件清单；未经用户要求不写入投资记忆。\n\n## 使用的 Skills\n\n- finfreedom-research\n- thesis-tracker\n\n## 提示词\n\n请使用 finfreedom-research 和 thesis-tracker Skills，结合 finfreedom-research 读取相关记忆和可用资料，构建论点、证据、反证和待验证事件清单；未经用户要求不写入投资记忆。 先确认必要信息，引用数据来源和时间，区分事实与假设；不要自动修改账户或执行交易。",
+    "skills": [
+      "finfreedom-research",
+      "thesis-tracker"
+    ],
+    "group": "资料与研究",
+    "added_at": "2026-10-29"
+  },
+  {
+    "id": "builtin-35",
+    "markdown": "# 业绩发布后复盘\n\n按财报期核对业绩变化及预期差。 以实际公告和可核验的预期为依据，整理本期收入、利润、现金流及管理层指引的变化；未取得一致预期时不得判断超预期或不及预期。\n\n## 使用的 Skills\n\n- finfreedom-research\n- earnings-analysis\n\n## 提示词\n\n请使用 finfreedom-research 和 earnings-analysis Skills，以实际公告和可核验的预期为依据，整理本期收入、利润、现金流及管理层指引的变化；未取得一致预期时不得判断超预期或不及预期。 请以中文回答，遵守来源和数据时效约束；不要自动交易或修改用户数据。",
+    "skills": [
+      "finfreedom-research",
+      "earnings-analysis"
+    ],
+    "group": "财务与估值",
+    "added_at": "2026-10-29",
+    "origin": "Anthropic 开源",
+    "priority": 1
+  },
+  {
+    "id": "builtin-36",
+    "markdown": "# 逐项核验投研报告\n\n将研究结论拆成可追溯的事实和数字。 先询问要核验的报告或观点，逐条检查数据和事实，标明原始来源、报告期及已核验、存在差异、无法核验；对可计算数字展示公式，不给无来源的结论。\n\n## 使用的 Skills\n\n- finfreedom-research\n- investskill-fact-check\n\n## 提示词\n\n请使用 finfreedom-research 和 investskill-fact-check Skills，先询问要核验的报告或观点，逐条检查数据和事实，标明原始来源、报告期及已核验、存在差异、无法核验；对可计算数字展示公式，不给无来源的结论。 请以中文回答，遵守来源和数据时效约束；不要自动交易或修改用户数据。",
+    "skills": [
+      "finfreedom-research",
+      "investskill-fact-check"
+    ],
+    "group": "资料与研究",
+    "added_at": "2026-10-29",
+    "origin": "InvestSkill 开源",
+    "priority": 1
+  },
+  {
+    "id": "builtin-37",
+    "markdown": "# 美股 SEC 财报深读\n\n按 SEC 原文分析财报与风险披露。 询问美股代码与报告期，优先读取用户导入的原始披露或可用工具返回的原文，核对报表和风险；只有联网能力与来源真实可用时才引用 SEC，未取到原文明确说明。\n\n## 使用的 Skills\n\n- finfreedom-research\n- investskill-financial-report-analyst\n\n## 提示词\n\n请使用 finfreedom-research 和 investskill-financial-report-analyst Skills，询问美股代码与报告期，优先读取用户导入的原始披露或可用工具返回的原文，核对报表和风险；只有联网能力与来源真实可用时才引用 SEC，未取到原文明确说明。 请以中文回答，遵守来源和数据时效约束；不要自动交易或修改用户数据。",
+    "skills": [
+      "finfreedom-research",
+      "investskill-financial-report-analyst"
+    ],
+    "group": "财务与估值",
+    "added_at": "2026-10-29",
+    "origin": "InvestSkill 开源",
+    "priority": 1
+  },
+  {
+    "id": "builtin-38",
+    "markdown": "# 看空论点与反证审查\n\n主动寻找持仓或候选股的反方证据。 先确认股票和已有投资论点，用可得的一手资料和市场数据建立反方论点，分别列支持证据、反驳条件和未知项，不编造数据或假设实时价格。\n\n## 使用的 Skills\n\n- finfreedom-research\n- investskill-bear-case\n\n## 提示词\n\n请使用 finfreedom-research 和 investskill-bear-case Skills，先确认股票和已有投资论点，用可得的一手资料和市场数据建立反方论点，分别列支持证据、反驳条件和未知项，不编造数据或假设实时价格。 请以中文回答，遵守来源和数据时效约束；不要自动交易或修改用户数据。",
+    "skills": [
+      "finfreedom-research",
+      "investskill-bear-case"
+    ],
+    "group": "市场与研究",
+    "added_at": "2026-10-29",
+    "origin": "InvestSkill 开源",
+    "priority": 1
+  },
+  {
+    "id": "builtin-39",
+    "markdown": "# 研究催化事件日历\n\n梳理可验证的财报及重要事件。 询问关注股票及时间范围，按已获证据整理财报、公告和其他重要事件；标注具体来源和确认程度，未取得日期时不要编造，也不要自动写入日历。\n\n## 使用的 Skills\n\n- finfreedom-research\n- catalyst-calendar\n\n## 提示词\n\n请使用 finfreedom-research 和 catalyst-calendar Skills，询问关注股票及时间范围，按已获证据整理财报、公告和其他重要事件；标注具体来源和确认程度，未取得日期时不要编造，也不要自动写入日历。 请以中文回答，遵守来源和数据时效约束；不要自动交易或修改用户数据。",
+    "skills": [
+      "finfreedom-research",
+      "catalyst-calendar"
+    ],
+    "group": "市场与事件",
+    "added_at": "2026-10-29",
+    "origin": "Anthropic 开源",
+    "priority": 1
+  },
+  {
+    "id": "builtin-40",
+    "markdown": "# 投资候选筛选与初审\n\n用明确条件筛选并核查候选。 先询问市场范围、筛选条件和风险约束，使用 finfreedom 可用筛选及查询工具；说明样本覆盖，不能筛选的条件列为待核实，不虚构候选。\n\n## 使用的 Skills\n\n- finfreedom-research\n- idea-generation\n\n## 提示词\n\n请使用 finfreedom-research 和 idea-generation Skills，先询问市场范围、筛选条件和风险约束，使用 finfreedom 可用筛选及查询工具；说明样本覆盖，不能筛选的条件列为待核实，不虚构候选。 请以中文回答，遵守来源和数据时效约束；不要自动交易或修改用户数据。",
+    "skills": [
+      "finfreedom-research",
+      "idea-generation"
+    ],
+    "group": "市场与研究",
+    "added_at": "2026-10-29",
+    "origin": "Anthropic 开源",
+    "priority": 1
+  },
+  {
+    "id": "builtin-41",
+    "markdown": "# 财报结论可追溯核验\n\n对关键数据逐项标注出处及计算过程。 对用户指定的财报分析逐条检查原始文件或可访问的证据，核对单位、报告期和计算过程；缺乏一手原文时标为待核验。\n\n## 使用的 Skills\n\n- finfreedom-research\n- investskill-fact-check\n\n## 提示词\n\n请使用 finfreedom-research 和 investskill-fact-check Skills，对用户指定的财报分析逐条检查原始文件或可访问的证据，核对单位、报告期和计算过程；缺乏一手原文时标为待核验。 请以中文回答，遵守来源和数据时效约束；不要自动交易或修改用户数据。",
+    "skills": [
+      "finfreedom-research",
+      "investskill-fact-check"
+    ],
+    "group": "资料与研究",
+    "added_at": "2026-10-29",
+    "origin": "InvestSkill 开源",
+    "priority": 1
+  },
+  {
+    "id": "builtin-42",
+    "markdown": "# 股票多空观点对照\n\n比较多头逻辑和风险反证。 读取可用公司资料、近期公告和市场行情，分别呈现支持与反对论点、关键假设、验证方法和数据时效；不根据无证据数据生成目标价。\n\n## 使用的 Skills\n\n- finfreedom-research\n- investskill-bear-case\n\n## 提示词\n\n请使用 finfreedom-research 和 investskill-bear-case Skills，读取可用公司资料、近期公告和市场行情，分别呈现支持与反对论点、关键假设、验证方法和数据时效；不根据无证据数据生成目标价。 请以中文回答，遵守来源和数据时效约束；不要自动交易或修改用户数据。",
+    "skills": [
+      "finfreedom-research",
+      "investskill-bear-case"
+    ],
+    "group": "市场与研究",
+    "added_at": "2026-10-29",
+    "origin": "InvestSkill 开源",
+    "priority": 1
+  },
+  {
+    "id": "builtin-43",
+    "group": "持仓与账户",
+    "skills": [
+      "finfreedom-research",
+      "futuapi"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 富途行情连接诊断\n\n检查本机网关、SDK 和行情权限，定位页面无报价、连接失败或数据延迟的原因，并给出可验证的排查步骤。 请使用 futuapi 与 finfreedom-research Skills 检查富途 OpenD 的本机连接、行情上下文和可读取的权限状态。只做只读诊断，缺少权限或未登录时明确提示，不索取密码、解锁交易或下单。\n\n## 使用的 Skills\n\n- finfreedom-research\n- futuapi\n\n## 提示词\n\n请使用 futuapi 与 finfreedom-research Skills 检查富途 OpenD 的本机连接、行情上下文和可读取的权限状态。只做只读诊断，缺少权限或未登录时明确提示，不索取密码、解锁交易或下单。"
+  },
+  {
+    "id": "builtin-44",
+    "group": "持仓与账户",
+    "skills": [
+      "finfreedom-research",
+      "futuapi"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 富途单只证券行情核验\n\n输入市场和证券代码，核对 OpenD 可读取的报价、行情时间及订阅或权限状态。 先询问证券代码与市场，通过只读接口核验 OpenD 行情及时间，说明权限和数据源限制；不要解锁交易或发送订单。\n\n## 使用的 Skills\n\n- finfreedom-research\n- futuapi\n\n## 提示词\n\n请使用 futuapi 和 finfreedom-research Skills，先询问证券代码与市场，通过只读接口核验 OpenD 行情及时间，说明权限和数据源限制；不要解锁交易或发送订单。"
+  },
+  {
+    "id": "builtin-45",
+    "group": "持仓与账户",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-portfolio-risk"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 持仓每日变化归因\n\n对比可得的相邻交易日价格与已记录持仓，拆解价格变化造成的影响并标注缺失。 确认币种，读取已记录持仓和相邻交易日行情，逐项列出可计算的价格变化影响及数据缺口；没有历史数量、成交或现金流时不得声称完整归因。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-portfolio-risk\n\n## 提示词\n\n请使用 finfreedom-portfolio-risk 和 finfreedom-research Skills，确认币种，读取已记录持仓和相邻交易日行情，逐项列出可计算的价格变化影响及数据缺口；没有历史数量、成交或现金流时不得声称完整归因。"
+  },
+  {
+    "id": "builtin-46",
+    "group": "组合与风险",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-portfolio-risk"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 跨币种持仓风险清单\n\n分别检查人民币、港币和美元账本的仓位与缺口，再说明汇率风险；不擅自换汇汇总。 请使用 finfreedom-portfolio-risk 和 finfreedom-research Skills 分别读取各币种账本，比较资产分布和数据缺口，解释潜在汇率敞口，不使用缺失或过期汇率合计。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-portfolio-risk\n\n## 提示词\n\n请使用 finfreedom-portfolio-risk 和 finfreedom-research Skills 分别读取各币种账本，比较资产分布和数据缺口，解释潜在汇率敞口，不使用缺失或过期汇率合计。"
+  },
+  {
+    "id": "builtin-47",
+    "group": "财务与估值",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-financial-analysis"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 营收增长驱动拆解\n\n按报告期检查收入、业务分部和增长率，说明增长来自哪些已披露的信息。 先确认公司和报告期，再核对可用分部收入、增长率及公告，列出证据和无法解释的增长来源。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-financial-analysis\n\n## 提示词\n\n请使用 finfreedom-financial-analysis 和 finfreedom-research Skills，先确认公司和报告期，再核对可用分部收入、增长率及公告，列出证据和无法解释的增长来源。"
+  },
+  {
+    "id": "builtin-48",
+    "group": "财务与估值",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-financial-analysis"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 利润率与成本结构复盘\n\n比较毛利率、营业利润率和费用变化，识别可能的成本压力及披露缺口。 按一致报告期分析成本、毛利率、营业利润率和费用率；提供公式与来源，说明一次性因素和缺失数据。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-financial-analysis\n\n## 提示词\n\n请使用 finfreedom-financial-analysis 和 finfreedom-research Skills，按一致报告期分析成本、毛利率、营业利润率和费用率；提供公式与来源，说明一次性因素和缺失数据。"
+  },
+  {
+    "id": "builtin-49",
+    "group": "基金与ETF",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-fund-analysis"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 基金经理与投资风格\n\n结合基金公告和定期报告梳理经理任期、投资范围及已披露的风格变化。 确认基金代码，查询可得的基金经理及报告，标注任期和持仓披露时间，不根据缺失信息推断风格。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-fund-analysis\n\n## 提示词\n\n请使用 finfreedom-fund-analysis 和 finfreedom-research Skills，确认基金代码，查询可得的基金经理及报告，标注任期和持仓披露时间，不根据缺失信息推断风格。"
+  },
+  {
+    "id": "builtin-50",
+    "group": "基金与ETF",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-fund-analysis"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 指数基金跟踪标的核验\n\n确认 ETF 或联接基金跟踪的指数、投资范围及可取得的偏离数据。 确认基金代码和类型，核对其跟踪指数、基准及费用；只有数据完整且同口径时才计算跟踪偏差。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-fund-analysis\n\n## 提示词\n\n请使用 finfreedom-fund-analysis 和 finfreedom-research Skills，确认基金代码和类型，核对其跟踪指数、基准及费用；只有数据完整且同口径时才计算跟踪偏差。"
+  },
+  {
+    "id": "builtin-51",
+    "group": "市场与事件",
+    "skills": [
+      "finfreedom-research",
+      "morning-note"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 自选股事件速览\n\n围绕自选列表梳理已取得的新闻和公告，按发布时间列出值得继续核查的事项。 读取我的自选和可用新闻，逐项按时间归纳已核实事件，区分相关新闻与直接公告，标明数据覆盖和时间。\n\n## 使用的 Skills\n\n- finfreedom-research\n- morning-note\n\n## 提示词\n\n请使用 morning-note 和 finfreedom-research Skills，读取我的自选和可用新闻，逐项按时间归纳已核实事件，区分相关新闻与直接公告，标明数据覆盖和时间。"
+  },
+  {
+    "id": "builtin-52",
+    "group": "市场与事件",
+    "skills": [
+      "finfreedom-research",
+      "catalyst-calendar"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 财报日程与准备清单\n\n整理可证实的财报日期和拟核查指标；没有可靠日程时列明待确认。 询问关注公司和时间范围，检索可得公告与日历，建立已核实事件及待查指标清单，不自动写入日历。\n\n## 使用的 Skills\n\n- finfreedom-research\n- catalyst-calendar\n\n## 提示词\n\n请使用 catalyst-calendar 和 finfreedom-research Skills，询问关注公司和时间范围，检索可得公告与日历，建立已核实事件及待查指标清单，不自动写入日历。"
+  },
+  {
+    "id": "builtin-53",
+    "group": "资料与研究",
+    "skills": [
+      "finfreedom-research",
+      "investskill-fact-check"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 财报原文关键数字复核\n\n逐项比对指定报告中的收入、利润和现金流数字，标注文件、页码和未核实内容。 询问要核对的报告或数字，逐项查找可访问原文并复算，列出出处、报告期、差异及无法验证的项目。\n\n## 使用的 Skills\n\n- finfreedom-research\n- investskill-fact-check\n\n## 提示词\n\n请使用 investskill-fact-check 和 finfreedom-research Skills，询问要核对的报告或数字，逐项查找可访问原文并复算，列出出处、报告期、差异及无法验证的项目。"
+  },
+  {
+    "id": "builtin-54",
+    "group": "市场与研究",
+    "skills": [
+      "finfreedom-research",
+      "investskill-bear-case"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 投资假设失效检查\n\n针对已有投资论点整理可能推翻它的事实、指标和反方证据。 先确认公司与已有投资论点，构建反方论据、可核实证据和失效条件，不把假设当事实。\n\n## 使用的 Skills\n\n- finfreedom-research\n- investskill-bear-case\n\n## 提示词\n\n请使用 investskill-bear-case 和 finfreedom-research Skills，先确认公司与已有投资论点，构建反方论据、可核实证据和失效条件，不把假设当事实。"
+  },
+  {
+    "id": "builtin-55",
+    "group": "策略与回测",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-strategy-research"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 均线回测参数对比\n\n选择可运行的均线参数组，比较同一数据区间的收益和回撤，标注样本内偏差。 询问代码、区间和待比较参数，先核验数据与工具支持，再逐组运行可用回测；说明费用和样本内筛选偏差。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-strategy-research\n\n## 提示词\n\n请使用 finfreedom-strategy-research 和 finfreedom-research Skills，询问代码、区间和待比较参数，先核验数据与工具支持，再逐组运行可用回测；说明费用和样本内筛选偏差。"
+  },
+  {
+    "id": "builtin-56",
+    "group": "策略与回测",
+    "skills": [
+      "finfreedom-research",
+      "finfreedom-strategy-research"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 策略数据质量检查\n\n回测前核对日线日期、复权口径、缺失值与数据版本，形成可复现清单。 先询问标的和日期区间，检查实际可得日线数据和数据集版本，列出缺口、频率、复权和可复现条件。\n\n## 使用的 Skills\n\n- finfreedom-research\n- finfreedom-strategy-research\n\n## 提示词\n\n请使用 finfreedom-strategy-research 和 finfreedom-research Skills，先询问标的和日期区间，检查实际可得日线数据和数据集版本，列出缺口、频率、复权和可复现条件。"
+  },
+  {
+    "id": "builtin-57",
+    "group": "市场与研究",
+    "skills": [
+      "finfreedom-research",
+      "idea-generation"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 候选股筛选条件设计\n\n把研究目标转换成可检查的条件，并指出当前数据或工具不能执行的筛选项。 询问市场、研究目标和筛选约束，列出候选条件并逐项核对工具覆盖；没有执行筛选时不要声称候选经过筛选。\n\n## 使用的 Skills\n\n- finfreedom-research\n- idea-generation\n\n## 提示词\n\n请使用 idea-generation 和 finfreedom-research Skills，询问市场、研究目标和筛选约束，列出候选条件并逐项核对工具覆盖；没有执行筛选时不要声称候选经过筛选。"
+  },
+  {
+    "id": "builtin-58",
+    "group": "财务与估值",
+    "skills": [
+      "finfreedom-research",
+      "earnings-preview"
+    ],
+    "added_at": "2026-10-29",
+    "markdown": "# 财报前关注点清单\n\n围绕指定公司和报告期梳理需要关注的经营指标、历史指引和事件日期。 确认公司与报告期，根据可靠公告和可得历史财报整理待关注指标及日期；缺少市场一致预期须明确标明。\n\n## 使用的 Skills\n\n- finfreedom-research\n- earnings-preview\n\n## 提示词\n\n请使用 earnings-preview 和 finfreedom-research Skills，确认公司与报告期，根据可靠公告和可得历史财报整理待关注指标及日期；缺少市场一致预期须明确标明。"
+  }
+]

@@ -1,0 +1,34 @@
+/* The host DSH owns primary navigation; the content is the original workspace. */
+.workspace { grid-template-columns: minmax(0, 1fr) var(--utility-width, 320px) !important; }
+.workspace > .sidebar { display: none !important; }
+.mobile-menu { display:none !important; }
+@media (max-width: 1000px) { .workspace { grid-template-columns:minmax(0,1fr) !important; } }
+
+.workspace.rail-hidden { grid-template-columns: minmax(0, 1fr) !important; }
+/* Workspace appearance is independent of red/green market conventions. */
+:root[data-workspace-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f7f9; --surface: #ffffff; --raised: #eef1f5;
+  --text: #242b36; --muted: #606c7c; --line: #dce2e9;
+  --primary: #ca4549; --primary-solid: #ca4549; --on-primary: #ffffff;
+  --primary-soft: #fff1f1; --primary-line: #e4aaad; --shell: #f0f3f6;
+  --market-red: #c6393e; --market-green: #178050; --ready: #16784d;
+  --secondary: #4b6387; --positive: #c6393e; --caution: #906015; --negative: #b63843;
+  --scrollbar-thumb: #aeb8c4; --scrollbar-hover: #84909f; --scrollbar-track: #f1f3f6;
+}
+:root[data-workspace-theme="light"][data-market-palette="us"] {
+  --primary: #117c58; --primary-solid: #117c58; --on-primary: #fff;
+  --primary-soft: #e7f5ee; --primary-line: #86bfa1; --positive: #178050;
+}
+:root[data-workspace-theme="light"] .tag.ready { background: #e7f5ee; border-color: #9dcbb2; }
+:root[data-workspace-theme="light"] .tag.amber, :root[data-workspace-theme="light"] .alert { background: #fff8ea; border-color: #ead2a5; }
+:root[data-workspace-theme="light"] .calendar-event.ipo, :root[data-workspace-theme="light"] .calendar-week-event.ipo { background:#fff1d7; }
+:root[data-workspace-theme="light"] .calendar-event.repo, :root[data-workspace-theme="light"] .calendar-week-event.subscription { color:#315d88; background:#e7f1fb; }
+:root[data-workspace-theme="light"] .calendar-event.earnings { color:#694e91; background:#f0eafa; }
+
+.topbar-memory-icon, .topbar-memory-icon svg { display:block; width:15px; height:15px; }
+
+/* Align the search action with the calendar and memory controls. */
+.global-search-submit { height:32px; min-height:32px; padding:0 10px; font-size:11px; line-height:1; }
+
+.dsh-plugin-prompt{display:block;width:100%;min-height:160px;resize:vertical;line-height:1.65;font-family:inherit}

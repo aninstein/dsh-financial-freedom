@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "finfreedom MCP v1 tool input contract",
+  "description": "Specification baseline. The runtime tool list must match these input schemas and the names in legacy-contract.json.",
+  "$defs": {
+    "catalog": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "read": {
+      "type": "object",
+      "properties": {
+        "resource": { "type": "string", "enum": ["cards", "calendar", "holdings", "paper_local_accounts", "paper_local_orders", "paper_local_ai_runs", "paper_futu_accounts", "paper_futu_orders", "live_futu_accounts", "live_futu_orders", "watchlist", "quotes", "market_status", "market_calendar", "indices", "index", "index_live", "providers", "news", "liquidity", "sectors", "flows", "instrument", "instrument_search", "bars", "documents", "document_page", "research", "backtests", "calendar_insights", "memory_settings", "agent_status", "extensions", "wiki_tree", "wiki_file", "memory"] },
+        "params": { "type": "object" }
+      },
+      "required": ["resource"],
+      "additionalProperties": false
+    },
+    "research": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "enum": ["get_investment_memory", "get_memory_entry", "get_watchlist", "get_market_news", "get_macro_liquidity", "get_sector_rotation", "read_uploaded_document", "get_historical_cycles", "get_index_analysis", "get_market_flow_history", "collect_fund_disclosures", "get_stock_dossier", "search_instruments", "get_sector_overview", "get_market_overview", "get_instrument_research", "screen_funds", "search_fund_directory", "get_fund_research", "get_fund_holdings", "get_fund_trade_changes", "get_stock_financials", "search_uploaded_documents", "get_flow_data_coverage", "run_sma_backtest"] },
+        "args": { "type": "object" },
+        "session_id": { "type": "string" }
+      },
+      "required": ["name"],
+      "additionalProperties": false
+    },
+    "prepare_holdings_import": {
+      "type": "object",
+      "properties": {
+        "currency": { "type": "string", "enum": ["CNY", "HKD", "USD"], "default": "CNY" },
+        "text": { "type": "string" },
+        "image_id": { "type": "string" },
+        "session_id": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "write": {
+      "type": "object",
+      "properties": {
+        "resource": { "type": "string", "enum": ["cards", "calendar", "holdings", "watchlist", "wiki_file"] },
+        "action": { "type": "string" },
+        "data": { "type": "object" }
+      },
+      "required": ["resource", "action", "data"],
+      "additionalProperties": false
+    }
+  }
+}

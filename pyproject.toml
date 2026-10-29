@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "finfreedom-dsh-plugin"
+version = "0.1.0"
+description = "finfreedom financial research tools for DeepSeek Harness"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = [
+  "mcp>=1.30,<2",
+  "pydantic>=2.10,<3",
+  "pymysql>=1.1,<2",
+  "futu-api>=10.11,<11",
+  "exchange-calendars>=4.5,<5",
+  "httpx>=0.27,<1",
+  "openpyxl>=3.1,<4",
+  "akshare>=1.16,<2",
+  "requests>=2.31,<3",
+]
+
+[project.scripts]
+finfreedom = "finfreedom.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["finfreedom"]
+include = ["finfreedom/**/*.py", "finfreedom/data/*.json"]

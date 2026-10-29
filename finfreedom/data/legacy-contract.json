@@ -1,0 +1,570 @@
+{
+  "status": "source-baseline-only",
+  "source_revision": "0990e2808b8f547a17889e9b0385019f311a8ba5",
+  "source_worktree_dirty": true,
+  "source_sha256": {
+    "app/platform_mcp.py": "16cb54abba2c872e5a2a40ef2e91b380f0954666b323506a3d84cdbd933da5d5",
+    "app/ai_agent.py": "d0dc4821add1286427ff7bacf435fead7fd6006d0c299b367645454921397b6d"
+  },
+  "readable": {
+    "cards": "右侧工作台卡片顺序、显示状态、自定义内容和附注",
+    "calendar": "用户计划、事件、订阅和提醒确认记录",
+    "holdings": "当前用户的股票、基金、黄金持仓及估值",
+    "paper_local_accounts": "本地模拟盘账户、虚拟现金、持仓与估值；可按 account_id 读取",
+    "paper_local_orders": "本地模拟盘委托账本；可按 account_id 分页",
+    "paper_local_ai_runs": "本地 AI 模拟交易任务和订单；可按 account_id 或 run_id 读取",
+    "paper_futu_accounts": "富途 SIMULATE 账户目录；指定 connection_id 后读取资金与持仓",
+    "paper_futu_orders": "本平台富途 SIMULATE 委托回报；可按 connection_id 分页",
+    "live_futu_accounts": "富途 REAL 账户目录；指定 connection_id 后只读查询资金与持仓",
+    "live_futu_orders": "本平台富途 REAL 委托回报；可按 connection_id 分页",
+    "watchlist": "自选标的与缓存行情",
+    "quotes": "各市场缓存行情与来源时间",
+    "market_status": "交易状态与交易所时钟",
+    "market_calendar": "交易所开闭市日历，最长 63 天",
+    "indices": "指数目录与缓存收盘信息",
+    "index": "单个指数的日线与分析",
+    "index_live": "主要指数的实时或延迟快照",
+    "providers": "行情源状态和数据覆盖",
+    "news": "已采集的财经新闻",
+    "liquidity": "央行流动性事件",
+    "sectors": "板块轮动与资金",
+    "flows": "市场资金统计及覆盖说明",
+    "instrument": "标的详情、财务及快照",
+    "instrument_search": "标的名称和代码搜索",
+    "bars": "标的历史日线",
+    "documents": "已导入研报资料目录",
+    "document_page": "研报或财报指定页的已提取文字",
+    "research": "当前用户的投研记录与证据",
+    "backtests": "策略回测记录",
+    "holdings_performance": "按币种读取真实持仓的历史日盈亏估算",
+    "calendar_insights": "指定交易日的指数、自选与资金观察",
+    "memory_settings": "当前用户的记忆保留期限与归档状态",
+    "agent_status": "当前 Agent 运行时、模型名称和能力状态，不含密钥",
+    "extensions": "已安装 Skills 与 MCP 的公开元数据，不含凭据",
+    "wiki_tree": "投资记忆目录；不读取历史原始会话",
+    "wiki_file": "投资记忆 Markdown 文档；不读取历史原始会话",
+    "memory": "按当前问题召回已归档记忆",
+    "guide_entries": "AI投研词条：收藏、个人词条及插件内置词条"
+  },
+  "writable": {
+    "cards": "设置右栏顺序、显隐、宽度；创建或修改自定义卡片及内置卡片附注",
+    "calendar": "创建、修改、删除日历计划/事件/订阅；确认提醒",
+    "holdings": "登记当前用户某币种的完整持仓快照，需带 expected_updated_at",
+    "watchlist": "添加或移除自选标的",
+    "wiki_file": "编辑当前用户的 Markdown 记忆文件，需带 expected_sha256",
+    "guide_entries": "创建、编辑、收藏、取消收藏和删除个人 AI投研词条，需先读取版本"
+  },
+  "research_tools": {
+    "get_investment_memory": {
+      "description": "检索当前用户的投资记忆：近期 daily、短期计划和长期偏好。只用于理解历史语境；价格、账户与交易仍须重新查询权威工具。不能读取原始历史 session。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_memory_entry": {
+      "description": "按记忆 ID 查看当前用户的一条有效记忆、状态和来源锚点；不返回原始会话。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "entry_id": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 100
+          }
+        },
+        "required": [
+          "entry_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_watchlist": {
+      "description": "读取本地自选标的及最近缓存报价，供每日逐只操作建议使用；未返回的标的不作推断。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    "get_market_news": {
+      "description": "获取最近已采集财经快讯，可按行业/关键词筛选。必须引用发布时间、首次采集时间及来源；关键词关联不是因果。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 30
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    "get_macro_liquidity": {
+      "description": "读取央行官方公开市场逆回购公告，分期限操作量、利率及原文。到期额或净投放缺失不推算；不等同个人国债逆回购交易。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    "get_sector_rotation": {
+      "description": "行业今日/5日/10日收益排名、资金分类及本机跨采集日快照。跨窗口改善不等于跨日轮动变化，说明共同集合与源时点缺口。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 80
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    "read_uploaded_document": {
+      "description": "按文档ID阅读研报/财报原文，返回一个页面最多6000字符及下一页/偏移；引用页码，未读取内容不能声称已读。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "document_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_historical_cycles": {
+      "description": "基于完整历史日线计算阶段收益、波动、最大回撤、月度季节性和收益自相关。只描述历史，不能作为预测。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "instrument_id": {
+            "type": "string"
+          },
+          "years": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          }
+        },
+        "required": [
+          "instrument_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_index_analysis": {
+      "description": "查询指数目录（不传ID）或分析上证、深成、沪深300、中证500、创业板、科创50、恒生、标普500、道琼斯、纳斯达克历史趋势。指数点位不能下单。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "index_id": {
+            "type": "string"
+          },
+          "years": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    "get_market_flow_history": {
+      "description": "查询沪深大盘最近资金分类历史；金额为元，来源估计资金不等于北向、基金真实流水。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    "collect_fund_disclosures": {
+      "description": "有界采集1至5只指定中国公募基金报告期持仓，逐只缓存及报告缺口，不能声称抓到了全市场实时操作。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "codes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9]{6}$"
+            },
+            "minItems": 1,
+            "maxItems": 5
+          },
+          "year": {
+            "type": "integer",
+            "minimum": 2000,
+            "maximum": 2100
+          }
+        },
+        "required": [
+          "codes"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_stock_dossier": {
+      "description": "聚合个股公司概况、盘口估值、财务、股东户数、分红、资金、新闻及公告。按分项状态和原始报告期引用，字段缺失不补造；资金不是北向真实流水。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "instrument_id": {
+            "type": "string"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "profile",
+                "snapshot",
+                "financials",
+                "ownership",
+                "dividends",
+                "flow",
+                "news",
+                "announcements",
+                "income",
+                "balance",
+                "cashflow",
+                "holders",
+                "business",
+                "reports"
+              ]
+            },
+            "maxItems": 4
+          }
+        },
+        "required": [
+          "instrument_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "search_instruments": {
+      "description": "按用户说的股票名称或代码查找已接入的证券，先确认名称和规范代码再做分析。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "maxLength": 80
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_sector_overview": {
+      "description": "查询A股行业板块的行情、成分股、涨跌统计和来源可用的行业主力资金。行业资金流不是北向资金或基金申赎。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 80
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_market_overview": {
+      "description": "读取某市场当前已缓存的行情快照及涨跌家数统计，不抓取全网、不补造行情。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "market": {
+            "type": "string",
+            "enum": [
+              "CN",
+              "HK",
+              "US",
+              "FUND",
+              "GOLD"
+            ]
+          }
+        },
+        "required": [
+          "market"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_instrument_research": {
+      "description": "读取单个标的行情、历史日线、技术指标及交易日历状态；缺失日线应报告数据缺口。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "instrument_id": {
+            "type": "string",
+            "description": "格式 MARKET:SYMBOL"
+          },
+          "days": {
+            "type": "integer",
+            "minimum": 20,
+            "maximum": 500
+          }
+        },
+        "required": [
+          "instrument_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "screen_funds": {
+      "description": "在本地已缓存的基金/ETF行情与净值列表中做有界筛选，不将披露净值当作实时价。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "asset_class": {
+            "type": "string",
+            "enum": [
+              "all",
+              "etf",
+              "mutual_fund"
+            ]
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 30
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "search_fund_directory": {
+      "description": "搜索东方财富公募基金目录，覆盖债券、ETF、LOF、QDII、FOF、货币、REITs 等；目录包含历史基金，需另核实当前申购状态。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "all",
+              "债券",
+              "ETF",
+              "LOF",
+              "QDII",
+              "FOF",
+              "货币",
+              "REITs",
+              "股票",
+              "混合",
+              "指数",
+              "其他"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "get_fund_research": {
+      "description": "读取指定基金的历史净值、阶段收益、经理、公司、费用、申赎状态、定期持仓和相邻披露权重变化；缺失的盘中估值保持空值。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "fund_code": {
+            "type": "string",
+            "pattern": "^[0-9]{6}$"
+          }
+        },
+        "required": [
+          "fund_code"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_fund_holdings": {
+      "description": "查询单只中国公募基金已披露报告期的持仓，不代表实时组合。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "fund_code": {
+            "type": "string",
+            "pattern": "^[0-9]{6}$"
+          },
+          "year": {
+            "type": "integer",
+            "minimum": 2000,
+            "maximum": 2100
+          }
+        },
+        "required": [
+          "fund_code"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_fund_trade_changes": {
+      "description": "查询单只中国公募基金年度报告披露的重大买入/卖出变动；属于定期披露，不是实时交易流水。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "fund_code": {
+            "type": "string",
+            "pattern": "^[0-9]{6}$"
+          },
+          "year": {
+            "type": "integer",
+            "minimum": 2000,
+            "maximum": 2100
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "buy",
+              "sell",
+              "both"
+            ]
+          }
+        },
+        "required": [
+          "fund_code"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_stock_financials": {
+      "description": "读取 AKShare 可返回的 A 股财务摘要，按原始报告期和来源呈现；字段缺失保持缺失。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string",
+            "pattern": "^[0-9]{6}$"
+          }
+        },
+        "required": [
+          "symbol"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "search_uploaded_documents": {
+      "description": "在用户导入的研报、财报和公告文本中检索匹配原文片段；只使用命中片段作证据。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 2
+          },
+          "instrument_id": {
+            "type": "string"
+          },
+          "document_id": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_flow_data_coverage": {
+      "description": "说明本地已接入的资金流/北向数据覆盖范围，尤其区分官方已停发的实时字段和现存的历史统计。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    "run_sma_backtest": {
+      "description": "对已有历史日线运行确定性的 SMA 基线回测；只写入研究记录，不产生订单。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "instrument_id": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date"
+          },
+          "end": {
+            "type": "string",
+            "format": "date"
+          },
+          "fast_window": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 100
+          },
+          "slow_window": {
+            "type": "integer",
+            "minimum": 3,
+            "maximum": 250
+          }
+        },
+        "required": [
+          "instrument_id",
+          "start",
+          "end"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "excluded_research_tools": [
+    "get_account_snapshot"
+  ],
+  "top_level_mcp_tools": [
+    "catalog",
+    "read",
+    "write",
+    "prepare_holdings_import",
+    "research"
+  ]
+}
