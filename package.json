@@ -10,6 +10,7 @@
     "pyproject.toml",
     "skills",
     "ui",
+    "docs/screenshots",
     "LICENSE",
     "NOTICE.md",
     "README.md",
