@@ -28,17 +28,19 @@
 请安装 finfreedom 插件：https://github.com/aninstein/dsh-financial-freedom
 ```
 
-也可在已安装 DSH CLI 的终端中直接安装第一个发布版本：
+`v0.2.0` Release 发布后，也可在已安装 DSH CLI 的终端中安装：
 
 ```sh
-dsh plugin --profile web add 'github:aninstein/dsh-financial-freedom#v0.1.0'
+dsh plugin --profile desktop add 'github:aninstein/dsh-financial-freedom#v0.2.0'
 ```
 
-启动或重启 DSH Web profile 后，在左侧工作台中打开「AI投研」或「市场总览」。后续版本可将 `v0.1.0` 换成相应的 Release tag。
+安装后重启 DeepSeek Harness，在左侧工作台中打开「AI投研」或「市场总览」。从源码仓库安装可省略 tag 并使用当前默认分支。
 
 ### 环境要求
 
-- DeepSeek Harness **0.1.1-rc.2 Web profile**（此版本已验证；其他版本和桌面 profile 尚未验证）。
+- DSH 版本矩阵：`@finfreedom/dsh-plugin` 0.1.x 对应 DSH 0.1.1-rc.2；0.2.x 对应 DSH 0.2.1-rc.3。0.2.x 面向当前桌面运行时，使用其会话控制器与工作区 API。
+- DSH 0.2.1-rc.3 桌面 runtime 的插件模块和 API 已对照本机 `app.asar` 源码核验。隔离 CLI 端到端安装受上游缺失包 `@deepseek-ai/dsh-tool-bash-persistent@0.2.1-rc.3` 阻塞，尚未完成完整启动验证；请勿据此视为已通过桌面 UI 验收。
+- DSH 0.1.1-rc.2 Web profile 使用 0.1.x 插件版本；0.2.x 的 MCP/Skills 依赖要求 DSH 0.2.1-rc.3，不能安装到旧运行时。
 - Node.js 22.19 或更高版本、Python 3.11 或更高版本。
 - 首次启动需要网络访问 Python 包源，以自动创建插件独立环境并安装依赖。首次准备可能需要几分钟；**不需要 Docker**。
 - 可选：本机富途 OpenD，用于插件支持的行情与只读账户查询。
@@ -105,13 +107,13 @@ Send this repository URL to your DSH Agent and ask it to install the plugin:
 Please install the finfreedom plugin: https://github.com/aninstein/dsh-financial-freedom
 ```
 
-Or install the first release from a DSH CLI:
+After the `v0.2.0` release is published, install it from a DSH CLI:
 
 ```sh
-dsh plugin --profile web add 'github:aninstein/dsh-financial-freedom#v0.1.0'
+dsh plugin --profile desktop add 'github:aninstein/dsh-financial-freedom#v0.2.0'
 ```
 
-Restart the DSH Web profile and open **AI投研** or **市场总览** from the workspace sidebar. The validated environment is DSH `0.1.1-rc.2` Web, Node.js `22.19+`, and Python `3.11+`. The first launch creates an isolated Python environment and installs dependencies; Docker is not required.
+Restart DeepSeek Harness and open **AI投研** or **市场总览** from the workspace sidebar. Plugin `0.2.x` targets DSH `0.2.1-rc.3`; plugin `0.1.x` targets DSH `0.1.1-rc.2`. The DSH 0.2.1 runtime APIs were inspected locally; full isolated CLI startup is pending an upstream package fix. Node.js `22.19+` and Python `3.11+` are required. The first launch creates an isolated Python environment and installs dependencies; Docker is not required.
 
 ### Features
 

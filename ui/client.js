@@ -321,12 +321,29 @@ window.__ModuleLoader__.load({
       const sendToAgent = async question => {
         // Every workspace action opens an unclassified session with an editable
         // prompt, leaving the user's current conversation and draft untouched.
-        const id = await ctx.sessions.create();
-        const scoped = ctx.sessions.scope(id);
-        if (!scoped) throw new Error('DSH 会话不可用');
-        const input = ctx.conversation.input.for(scoped);
-        input.setDraft(question);
-        ctx.sessions.open(id);
+        const created = await ctx.sessions.create();
+        if (created?.ok === false) throw new Error(created.error?.message || '无法创建 DSH 会话');
+        const id = typeof created === 'string' ? created : created?.value?.sessionId ?? created?.sessionId;
+        if (typeof id !== 'string' || !id) throw new Error('DSH 未返回新会话编号');
+
+        // DSH 0.2.1 requires a retained Client Session before its Agent scope
+        // exists. In 0.1.1, create() installs the scope immediately.
+        const reference = typeof ctx.sessions.retain === 'function'
+          ? ctx.sessions.retain(id, {source:'mainView'})
+          : null;
+        try {
+          if (reference?.ready) await reference.ready;
+          const scoped = ctx.sessions.scope(id);
+          if (!scoped) throw new Error('DSH 会话不可用');
+          const input = ctx.conversation.input.for(scoped);
+          input.setDraft(question);
+          const workspace = ctx.get?.('uiWorkspace');
+          if (typeof workspace?.openSession === 'function') workspace.openSession(id);
+          else if (typeof ctx.sessions.open === 'function') ctx.sessions.open(id);
+          else throw new Error('当前 DSH 版本不支持打开新会话');
+        } finally {
+          reference?.release?.();
+        }
       };
       ctx.effect(() => {
         const style = document.createElement('style'); style.dataset.plugin = '@finfreedom/dsh-plugin'; style.textContent = css;
